@@ -1,0 +1,37 @@
+package recursion;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class remove_duplicate {
+
+    //String str= masai
+
+    static   String removeDuplicae(String str){
+
+        Map<Character,Integer> mp= new HashMap<>();
+
+        for(int i=0;i<str.length();i++){
+
+            if(mp.containsKey(str.charAt(i))){
+                mp.put(str.charAt(i),mp.get(str.charAt(i))+1);
+            }
+            else{
+                mp.put(str.charAt(i),1);
+            }
+        }
+        String result="";
+        for(int i=0;i<str.length();i++){
+            if(mp.get(str.charAt(i))<=1){
+                result+=str.charAt(i);
+            }
+        }
+        return  result;
+    }
+
+
+    public static void main(String[] args) {
+String ans = removeDuplicae("masaim");
+        System.out.println(ans);
+    }
+}
