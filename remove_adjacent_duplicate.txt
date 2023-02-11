@@ -1,0 +1,47 @@
+package recursion;
+
+public class remove_adjacent_duplicate {
+
+    //string str="masai";
+
+   static  String removeDuplicate(String str){
+        if(str.trim().isEmpty()){
+            return "Empty String";
+        }
+        if(str.length()==1){
+            return str;
+        }
+        String result="";
+        for(int i=0;i<str.length();i++){
+
+            if(i==0){
+                if(str.charAt(i) != str.charAt(i + 1)){
+                    result+=str.charAt(i);
+                }
+            }
+           else if (i==str.length()-1){
+                if(str.charAt(i)!=str.charAt(i-1)){
+                    result+=str.charAt(i);
+                }
+            }
+            else{
+                if (str.charAt(i)!=str.charAt(i-1) && str.charAt(i) != str.charAt(i + 1)) {
+                    result+=str.charAt(i);
+                }
+            }
+
+
+        }
+        if(result.length()==str.length()){
+            return result;
+        }
+        else{
+            return removeDuplicate(result);
+        }
+    }
+
+    public static void main(String[] args) {
+     String ans= removeDuplicate("masai");
+        System.out.println(ans);
+    }
+}
