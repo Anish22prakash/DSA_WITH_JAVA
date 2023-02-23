@@ -1,0 +1,29 @@
+package two_pointer;
+
+public class two_sum_array {
+
+    public static void main(String[] args) {
+        int[] arr={2,4,6,7,8,15,16};
+
+        int k=18;
+        int l=0;
+        int r=arr.length-1;
+        boolean check=false;
+
+        while(l<=r){
+            if(arr[l]+arr[r]==k){
+                check=true;
+                break;
+            }
+            else if(arr[l]+arr[r]>k){
+                r--;
+            }
+            else
+                l++;
+        }
+        if(check){
+            System.out.println("sum is present in the array");
+        }else
+            System.out.println("sum is not in the array");
+    }
+}
