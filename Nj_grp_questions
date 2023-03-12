@@ -1,0 +1,35 @@
+package masai;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Test {
+    public static void main(String[] args) {
+
+
+//        Map an= new HashMap<>();
+//        an.put("anish","1");
+//        an.put("manish","3");
+//        an.put(1,"anihs");
+//        System.out.println(an.get(1));
+//        System.out.println(an.values());
+
+        // we can define hashMap without defining the generic type
+
+        // we can't use break state in if block directly , we only use if and else statement in loop or switch block
+
+
+        //we can't do that like that;
+//        if(true){
+//            break;
+//        }
+
+
+        // only we use break and continue statement in loop aur switch conditions;
+//        for(int i=0;i<5;i++){
+//            System.out.println(i);
+//            if(true){
+//                break;
+//            }
+//            System.out.println(i);
+//        }
