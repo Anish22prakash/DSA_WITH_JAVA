@@ -1,0 +1,25 @@
+ List<Integer>arr= new ArrayList<>();
+        arr.add(2);
+        arr.add(4);
+        arr.add(26);
+        arr.add(24);
+        arr.add(4);
+        arr.add(6);
+
+        boolean temp=false;
+        for(int i=0;i<arr.size();i++){
+            for(int l=i+1;l<arr.size();l++){
+                if(arr.get(i)==arr.get(l)){
+                    temp=true;
+                    break;
+                }
+            }
+            if(temp){
+                break;
+            }
+        }
+
+        if(temp){
+            System.out.println("duplicate is present");
+        }else
+            System.out.println("duplicate is not present");
