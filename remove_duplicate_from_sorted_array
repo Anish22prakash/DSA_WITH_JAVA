@@ -1,0 +1,33 @@
+        List<Integer> arr=new ArrayList<>();
+        arr.add(1);
+        arr.add(1);
+        arr.add(2);
+        arr.add(2);
+        arr.add(2);
+        arr.add(4);
+        arr.add(5);
+        arr.add(6);
+
+        List<Integer>ans= new ArrayList<>();
+
+        int i=0;
+        int l=1;
+
+        while(l<arr.size()){
+            if(arr.get(i)==arr.get(l)){
+                l++;
+            }
+            else{
+                ans.add(arr.get(i));
+                i=l;
+                l++;
+            }
+
+        }
+        ans.add(arr.get(i));
+
+        for(int k=0;k<ans.size();k++){
+            System.out.println(ans.get(k));
+        }
+
+    }
