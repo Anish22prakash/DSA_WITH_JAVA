@@ -1,0 +1,17 @@
+public class interest {
+    static int st=0;
+
+    static double find(Double amt,int yr,float rate){
+        if(st==yr){
+            return amt;
+        }
+        amt=amt+(rate*amt)/100;
+        st++;
+        return find(amt,yr,rate);
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(find(30000.0,3,4));
+    }
+}
