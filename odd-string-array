@@ -1,0 +1,31 @@
+class Solution {
+    public String oddString(String[] words) {
+        int n=words[0].length();
+        
+        int[] arr1= new int[n];
+        int[] arr2= new int[n];
+        int[] arr3= new int[n];
+        
+        for(int i=0;i<n-1;i++){
+            arr1[i]=words[0].charAt(i+1)-words[0].charAt(i);
+            arr2[i]=words[1].charAt(i+1)-words[1].charAt(i);
+            arr3[i]=words[2].charAt(i+1)-words[2].charAt(i);
+        }
+        
+        if(Arrays.equals(arr1,arr2) && !Arrays.equals(arr1,arr3))return words[2];
+        if(Arrays.equals(arr1,arr3) && !Arrays.equals(arr1,arr2))return words[1];
+        if(Arrays.equals(arr3,arr2) && !Arrays.equals(arr1,arr3))return words[0];
+       
+        
+        for(int j=3;j<words.length;j++){
+            int[] temp= new int[n];
+            for(int i=0;i<n-1;i++){
+                temp[i]=words[j].charAt(i+1)-words[j].charAt(i);
+            }
+            
+            if(!Arrays.equals(arr1,temp))
+                return words[j];
+        }
+         return null;
+    }
+}
