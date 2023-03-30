@@ -1,0 +1,56 @@
+import java.util.*;
+import java.io.*;
+import java.util.stream.*;
+
+
+class Main{
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf= new BufferedReader(new InputStreamReader(System.in));
+         int[] arr = Arrays.stream(bf.readLine().trim().split(" "))
+         .mapToInt(Integer::parseInt).toArray();
+         int r=arr[0];
+         int c=arr[1];
+         int[][]mat= new int[r][c];
+         for(int i=0;i<r;i++){
+              int[] arr1 = Arrays.stream(bf.readLine().trim()
+              .split(" ")).mapToInt(Integer::parseInt).toArray();
+              mat[i]=arr1;
+         }
+         countPrime(mat,r,c);
+           
+    }
+    public static void countPrime(int[][]mat,int r, int c){
+        int count=0;
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+               Boolean check= checkPrime(mat[i][j]);
+               if(check){
+                   //System.out.println(mat[i][j]);
+                    count++;
+               }
+              
+            }
+        }
+        
+        System.out.println(count);
+    }
+    
+    public static Boolean checkPrime(int num){
+        if(num==1){
+            return false;
+        }
+        int count=0;
+        for(int i=2; i<num; i++)
+      {
+         if(num%i == 0)
+         {
+            count++;
+            break;
+         }
+      }
+      if(count==0){
+          return true;
+      }else return false;
+    }
+}
