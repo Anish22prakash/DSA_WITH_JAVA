@@ -1,0 +1,17 @@
+public class reverseString {
+    static String s="";
+
+    public String reverseString(String str,int n){
+        if(n<=0){
+            return s;
+        }
+        s+=str.charAt(n-1);
+
+        return reverseString(str,n-1);
+    }
+    public static void main(String[] args) {
+        reverseString rs= new reverseString();
+        System.out.println(rs.reverseString("masai",5));
+        
+    }
+}
