@@ -1,0 +1,16 @@
+public class SumOfElementUsingRecursion {
+    static int sum=0;
+    static  int addelement(int n,int[]arr){
+        if(n<=0){
+            return sum;
+        }
+
+        sum+=arr[n-1];
+        return addelement(n-1,arr);
+    }
+    public static void main(String[] args) {
+        int[]arr={1,2,3,4,5};
+        int n=arr.length;
+        System.out.println(addelement(n,arr));
+    }
+}
