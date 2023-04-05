@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class PersonalityTest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int n = scanner.nextInt();
+        
+        int[][] students = new int[n][2];
+        
+        // Read in the heights and weights of the students
+        for (int i = 0; i < n; i++) {
+            students[i][0] = scanner.nextInt(); // height
+            students[i][1] = scanner.nextInt(); // weight
+        }
+        
+        // Sort the students based on height and weight
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (students[j][0] > students[i][0] ||
+                    (students[j][0] == students[i][0] && students[j][1] < students[i][1])) {
+                    // Swap the students if they are out of order
+                    int[] temp = students[i];
+                    students[i] = students[j];
+                    students[j] = temp;
+                }
+            }
+        }
+        
+        // Print the top 8 students based on the sorted list
+        for (int i = 0; i < Math.min(n, 8); i++) {
+            System.out.println(students[i][0] + " " + students[i][1]);
+        }
+    }
+}
