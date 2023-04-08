@@ -1,0 +1,39 @@
+import java.util.*;
+import java.io.*;
+import java.util.stream.*;
+
+
+class Main{
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf= new BufferedReader(new InputStreamReader(System.in));
+         int n = Integer.parseInt(bf.readLine().trim());
+         for(int i=0;i<n;i++){
+           String s=bf.readLine();
+        System.out.println(anagram(s));  
+         }
+         
+           
+    }
+    public static int anagram(String s){
+        int count = 0;
+        HashMap<String, Integer> map = new HashMap<String, Integer>();
+        
+        for(int i=0; i<s.length(); i++) {
+            for(int j=i+1; j<=s.length(); j++) {
+                char[] subArray = s.substring(i,j).toCharArray();
+                Arrays.sort(subArray);
+                String subString = new String(subArray);
+                
+                if(map.containsKey(subString)) {
+                    int value = map.get(subString);
+                    count += value;
+                    map.put(subString, value+1);
+                } else {
+                    map.put(subString, 1);
+                }
+            }
+        }
+        return count;
+    }
+}
