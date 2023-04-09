@@ -1,0 +1,29 @@
+import java.util.*;
+import java.io.*;
+import java.util.stream.*;
+
+
+class Main{
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf= new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(bf.readLine().trim());
+        AClassicalProblem(n);
+           
+    }
+    public static void AClassicalProblem(int n){
+        for(int i=1;i<=n;i++){
+            if(i%5==0 && i%7!=0){
+                System.out.println("Masai");
+            }
+            else if(i%7==0 && i%5!=0){
+                System.out.println("School");
+            }
+            else if(i%7==0 && i%5==0){
+                 System.out.println("MasaiSchool");
+            }else{
+                System.out.println(i);
+            }
+        }
+    }
+}
