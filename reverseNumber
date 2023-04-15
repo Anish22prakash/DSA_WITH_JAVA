@@ -1,0 +1,12 @@
+   int num=12345;
+        int rev_num=0;
+        int remaninder=0;
+        while(num>0){
+
+            remaninder=num%10;
+            rev_num=rev_num*10+remaninder;
+            num=num/10;
+        }
+
+        System.out.println(rev_num);
+    }
