@@ -1,0 +1,31 @@
+import java.util.*;
+import java.io.*;
+import java.util.stream.*;
+
+
+class Main{
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf= new BufferedReader(new InputStreamReader(System.in));
+         int n = Integer.parseInt(bf.readLine().trim());
+        
+             int[] bag = Arrays.stream(bf.readLine().trim().split(" "))
+             .mapToInt(Integer::parseInt).toArray();
+             
+             int[] hand_bag = Arrays.stream(bf.readLine().trim().split(" "))
+             .mapToInt(Integer::parseInt).toArray();
+         
+         MasaiAirline(n,bag,hand_bag);
+           
+    }
+    
+    public static void MasaiAirline(int n,int[] bag,int[] hand_bag){
+        for(int i=0;i<n;i++){
+            if(bag[i]<=15 && hand_bag[i]<=7){
+                System.out.println("Boarding");
+            }else{
+                 System.out.println("Stop");
+            }
+        }
+    }
+}
