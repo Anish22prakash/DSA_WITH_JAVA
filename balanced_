@@ -1,0 +1,43 @@
+import java.util.*;
+import java.io.*;
+import java.util.stream.*;
+
+
+class Main{
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf= new BufferedReader(new InputStreamReader(System.in));
+        int tc = Integer.parseInt(bf.readLine().trim());
+        for(int i=0;i<tc;i++){
+            String str=bf.readLine();
+           boolean ans= Againaclassicalproblem(str);
+           if(ans){
+               System.out.println("balanced");
+           }
+           else{
+                System.out.println("not balanced"); 
+           }
+        }
+           
+    }
+    public static boolean  Againaclassicalproblem(String str){
+        Stack<Character> st= new Stack<>();
+        
+        for(char c:str.toCharArray()){
+            if(c=='('){
+                st.push(')');
+            }
+            else if(c=='['){
+                st.push(']');
+            }
+            else if(c=='{'){
+                st.push('}');
+            }
+            else if(st.isEmpty() || st.pop()!=c){
+                return false;
+            }
+            
+        }
+        return st.isEmpty();
+    }
+}
