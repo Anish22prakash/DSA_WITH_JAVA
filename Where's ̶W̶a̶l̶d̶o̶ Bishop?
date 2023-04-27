@@ -1,0 +1,42 @@
+import java.util.*;
+class Main {
+    public static void Waldo(String[] str) {
+        char[][] str2 = new char[8][8];
+        int x = 0, y = 0;
+        boolean ch = false;
+        
+        for (int i=0;i<8;i++)
+        {
+            int c = 0;
+            str2[i] = str[i].toCharArray();
+            for (int j = 0;j<8;j++) {
+                if (str2[i][j] == '#') {
+                    c++;
+                    y = j + 1;
+}
+            }
+            if (c==2) {
+                ch=true;
+            }
+            if (ch==true&&c==1) {
+                x = i + 1;
+                break;
+            }
+        }
+        System.out.println(x+" "+y);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int tc = sc.nextInt();
+        for (int t = 0; t < tc; t++) {
+            String[] str = new String[8];
+            for (int i = 0; i < str.length; i++) {
+                str[i] = sc.next();
+
+            }
+            Waldo(str);
+        }
+
+    }
+}
